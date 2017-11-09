@@ -1,0 +1,8 @@
+<launch>
+	<include file="$(find ca_driver)/launch/create_1.launch" />
+	<include file="$(find openni2_launch)/launch/openni2.launch" />
+	<include file="$(find ca_tools)/launch/joy_teleop.launch" />
+	<node pkg="tf" type="static_transform_publisher" name="camera_tf_pub" 
+		args="0.0 0.0 0.085 0.0 0.0 0.0 base_link camera_link 10" >
+	</node>
+</launch>
